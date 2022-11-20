@@ -1,5 +1,8 @@
 # Vecerdi.Ignore
 
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Vecerdi.Ignore)
+
+
 Generate `.gitignore` files for your projects based on one or more templates from [gitignore.io](https://gitignore.io).
 
 ## Installation

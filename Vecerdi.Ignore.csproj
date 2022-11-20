@@ -19,7 +19,7 @@
         <PackageId>Vecerdi.Ignore</PackageId>
         <Authors>Teodor Vecerdi</Authors>
         <Author>Teodor Vecerdi</Author>
-        <Description>Generate .gitignore files for your projects</Description>
+        <Description>Generate .gitignore files for your projects based on one or more templates from gitignore.io.</Description>
 
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/TeodorVecerdi/Vecerdi.Ignore</PackageProjectUrl>
