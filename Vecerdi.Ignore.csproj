@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <LangVersion>preview</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>ignore</ToolCommandName>
+        <PackageOutputPath>./nupkg</PackageOutputPath>
+
+        <PackageVersion>1.0.0</PackageVersion>
+        <PackageReleaseNotes>
+            Initial release.
+        </PackageReleaseNotes>
+
+        <Title>Vecerdi.Ignore</Title>
+        <PackageId>Vecerdi.Ignore</PackageId>
+        <Authors>Teodor Vecerdi</Authors>
+        <Author>Teodor Vecerdi</Author>
+        <Description>Generate .gitignore files for your projects</Description>
+
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/TeodorVecerdi/Vecerdi.Ignore</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/TeodorVecerdi/Vecerdi.Ignore</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>gitignore;gitignore-generator;gitignore-file;gitignore-generator-dotnet;dotnet-tool;tool;ignore-generator;ignore-file</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+        <None Include="LICENSE" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+</Project>
