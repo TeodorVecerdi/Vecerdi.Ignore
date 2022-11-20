@@ -20,6 +20,7 @@
         <Authors>Teodor Vecerdi</Authors>
         <Author>Teodor Vecerdi</Author>
         <Description>Generate .gitignore files for your projects based on one or more templates from gitignore.io.</Description>
+        <Version>$(PackageVersion)</Version>
 
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/TeodorVecerdi/Vecerdi.Ignore</PackageProjectUrl>
@@ -30,11 +31,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1"/>
+        <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="README.md" Pack="true" PackagePath="\"/>
-        <None Include="LICENSE" Pack="true" PackagePath="\"/>
+        <None Include="README.md" Pack="true" PackagePath="\" />
+        <None Include="LICENSE" Pack="true" PackagePath="\" />
     </ItemGroup>
 </Project>
