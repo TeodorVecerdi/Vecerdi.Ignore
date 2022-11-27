@@ -12,25 +12,25 @@ internal static class Program {
         rootCommand.AddCommand(listSubcommand);
 
         Argument<string[]> ignoresArgument = new(
-            name: "ignores",
-            description: "One or more gitignore.io templates to use"
+            "ignores", "One or more gitignore.io templates to use"
         ) {
             Arity = ArgumentArity.OneOrMore
         };
 
         Option<FileInfo> outputOption = new(
-            aliases: new []{"--output", "-o"},
-            description: "Set the output file to write the .gitignore to",
-            getDefaultValue: () => new FileInfo(".gitignore")
+            new[] { "--output", "-o" },
+            () => new FileInfo(".gitignore"),
+            "Set the output file to write the .gitignore to"
         ) {
-            IsRequired = false,
-            ArgumentHelpName = "file",
-            Arity = ArgumentArity.ExactlyOne,
+            ArgumentHelpName = "file"
         };
+
+        Option<bool> silentOption = new(new[] { "--silent", "-s" }, "Do not output anything to the console");
 
         rootCommand.AddArgument(ignoresArgument);
         rootCommand.AddOption(outputOption);
-        rootCommand.SetHandler(HandleGenerateCommand, ignoresArgument, outputOption);
+        rootCommand.AddOption(silentOption);
+        rootCommand.SetHandler(HandleGenerateCommand, ignoresArgument, outputOption, silentOption);
         return await rootCommand.InvokeAsync(args);
     }
 
@@ -43,12 +43,15 @@ internal static class Program {
         Environment.Exit(0);
     }
 
-    private static async Task HandleGenerateCommand(string[] templates, FileInfo output) {
+    private static async Task HandleGenerateCommand(string[] templates, FileInfo output, bool silent) {
         if (templates is [var joinedTemplates] && joinedTemplates.Contains(',', StringComparison.Ordinal)) {
             templates = templates[0].Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
         }
 
-        Console.WriteLine($"Generating '{output}' using templates: {string.Join(", ", templates)}");
+        if (!silent) {
+            Console.WriteLine($"Generating '{output}' using templates: {string.Join(", ", templates)}");
+        }
+
         string content = await GetContent(templates);
         await File.WriteAllTextAsync(output.FullName, content);
     }

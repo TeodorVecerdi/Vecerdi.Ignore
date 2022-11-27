@@ -10,16 +10,17 @@
         <ToolCommandName>ignore</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
 
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
         <PackageReleaseNotes>
-            Initial release.
+- Added --silent option
         </PackageReleaseNotes>
 
         <Title>Vecerdi.Ignore</Title>
         <PackageId>Vecerdi.Ignore</PackageId>
         <Authors>Teodor Vecerdi</Authors>
-        <Author>Teodor Vecerdi</Author>
         <Description>Generate .gitignore files for your projects based on one or more templates from gitignore.io.</Description>
+
+        <Author>$(Authors)</Author>
         <Version>$(PackageVersion)</Version>
 
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
