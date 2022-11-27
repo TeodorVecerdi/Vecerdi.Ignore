@@ -27,6 +27,7 @@ Arguments:
 
 Options:
   -o, --output <file>  Set the output file to write the .gitignore to [default: .gitignore]
+  -s, --silent         Do not output anything to the console
   --version            Show version information
   -?, -h, --help       Show help and usage information
 
